@@ -7,5 +7,5 @@ class Card
     @question = question_arg
     @answer = answer_arg
     @category = category_arg
-  en
+  end
 end
