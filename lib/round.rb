@@ -8,7 +8,7 @@ class Round
   end
 
   def current_card
-    return deck.cards[0]
+    deck.cards[0]
   end
 
   def take_turn(guess)
@@ -28,11 +28,11 @@ class Round
       turn.card.category === category && turn.correct?
     end
 
-    return correct_answers.length
+    correct_answers.length
   end
 
   def percent_correct
-    return @number_correct / turns.length.to_f * 100
+    @number_correct / turns.length.to_f * 100
   end
 
   def percent_correct_by_category(category)
@@ -44,6 +44,6 @@ class Round
       turn.card.category === category
     end
 
-    return number_correct.length.to_f / total.length * 100 
+    number_correct.length.to_f / total.length * 100 
   end
 end
