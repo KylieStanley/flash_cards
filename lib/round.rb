@@ -7,6 +7,11 @@ class Round
     @number_correct = 0
   end
 
+  def start
+    puts "Welcome! You're playing with #{deck.cards.count} cards."
+    puts '-------------------------------------------------'
+  end
+
   def current_card
     deck.cards[0]
   end
