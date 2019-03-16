@@ -12,9 +12,19 @@ deck = Deck.new(cards)
 round = Round.new(deck)
 
 round.start
+count = deck.cards.count
 
 until deck.count == 0
-    puts "This is card number #{round.turns.count + 1} out of #{deck.cards.count}"
-    puts "Question: #{round.current_card.question}"
+  puts "This is card number #{round.turns.count + 1} out of #{count}"
+  puts "Question: #{round.current_card.question}"
+  print "Answer: "
+  user_answer = gets.chomp
+  turn = round.take_turn(user_answer) 
+  puts turn.feedback
+  puts ''
 end
+
+puts "****** Game Over! ******"
+puts "You had #{round.number_correct} correct guesses out of #{count} for a total score of #{round.percent_correct}%"
+
 
